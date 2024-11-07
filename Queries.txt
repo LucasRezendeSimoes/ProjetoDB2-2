@@ -1,0 +1,4 @@
+
+//1. Histórico dos alunos com id, nome, semestre, ano e nota final da disciplina.
+MATCH (a:Alunos)-[h:Hist_a]->(d:Disciplinas)
+RETURN a.name as nome, a.ra as RA, d.id as id_disciplinas, d.name as nome_disciplinas, h.semestre as semestre, h.ano as ano, h.nota as nota
