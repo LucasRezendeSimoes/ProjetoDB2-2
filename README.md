@@ -11,4 +11,5 @@ Como acessar o banco de dados:
 - Copie o código do arquivo codigo.txt
 - Cole no terminal e execute
 
+Todo o projeto foi desenvolvido no DataStax Astra.
 As queries pedidas estão no arquivo queries.txt
