@@ -1,0 +1,158 @@
+/* Alunos */
+CREATE TABLE default_keyspace.Alunos(
+  nome TEXT,
+  ra TEXT PRIMARY KEY,
+  id_Curso TEXT,
+  tot_cred INT,
+  id_tcc TEXT,
+  formado DATE,
+  nome_disc TEXT,
+  id_disc TEXT,
+  semestre INT,
+  ano INT,
+  nota FLOAT,
+  nome_ori TEXT,
+  id_ori TEXT 
+);
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Briney Crips','7144486071','5356',1,'716','2010-01-01','Python','7615',1,2014,5.7,'Cléber','88580');
+
+INSERT INTO
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Hunt Burberry','6390410948','5356',2,'634','0001-01-01','Eng. de Software','9882',3,2013,8,'Cleiton','99154');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Merralee Aiken','8676755329','9583',3,'716','0001-01-01','Eng. Elétrica','7615',1,2014,5.7,'Cleiton','99154');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Jerry Summerson','5370601909','9583',4,'634','0001-01-01','Sociologia','8598',2,2002,9.3,'Cléber','88580');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Carey Gillingham','4581949548','9876',5,'716','2010-05-01','Filosofia','7927',3,2010,2.5,'Cléber','88580');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Giana Harback','2884642765','9876',6,'','2010-05-01','Administração','1880',1,2020,5.3,'','');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Leland Jimes','6703616205','1914',7,'565','0001-01-01','Sistemas Digitais','3448',4,2012,4,'Maria','20783');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Nicola Arro','5913577698','1914',8,'565','2020-08-01','C','0842',2,2011,7.8,'Maria','20783');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Conrad Spears','5591245617','1521',9,'','0001-01-01','Eng. Civil','8940',1,2013,5.6,'','');
+
+INSERT INTO 
+default_keyspace.Alunos(nome,ra,id_curso,tot_cred,id_tcc,formado,nome_disc,id_disc,semestre,ano,nota,nome_ori,id_ori) VALUES
+('Edita Heustace','1040251110','1521',10,'','0001-01-01','Microprocessadores','4296',4,2009,8.4,'','');
+
+/* Professores */
+
+CREATE TABLE default_keyspace.Professores(
+  nome TEXT,
+  id TEXT PRIMARY KEY,
+  depart_nome TEXT,
+  depart_id TEXT,
+  chefe BOOLEAN,
+  id_disc TEXT,
+  nome_disc TEXT,
+  data DATE
+);
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Cléber','88580','Ciências da Computação','CC',true,'7615','Python','2018-01-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('João','90276','Administração','AD',false,'1014','Estatística','2015-02-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Cleiton','99154','Física','FI',true,'1983','Cálculo','2013-03-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Rosana','24486','Eng. Elétrica','EE',true,'1248','Circuitos','2013-03-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Maria','20783','Estudos Sociais','ES',true,'8598','Sociologia','2018-02-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Paulo','57452','Ciências da Computação','CC',false,'0842','C','2024-03-01');
+
+INSERT INTO
+default_keyspace.Professores(nome, id, depart_nome, depart_id, chefe, id_disc, nome_disc, data) VALUES
+('Paulo','55321','Eng. Elétrica','EE',true,'3448','Sistemas Digitais','2021-04-01');
+
+/*Cursos e disciplinas*/
+CREATE TABLE default_keyspace.Cursos(
+  mmc TEXT PRIMARY KEY,
+  id_curso TEXT,
+  nome_curso TEXT,
+  coordenador TEXT,
+  depart_id TEXT,
+  depart_nome TEXT,
+  id_disc TEXT,
+  nome_disc TEXT,
+  ciclo INT,
+);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('53567615','5356','Ciências da computação','88580','CC','Ciências da computação','7615','Python',1);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('53560842','5356','Ciências da computação','88580','CC','Ciências da computação','0842','C',2);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('53565890','5356','Ciências da computação','88580','ES','Estudos Sociais','5890','Estudo Social Cristão',3);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('53561983','5356','Ciências da computação','88580','FI','Física','1983','Cálculo',4);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('95831248','9583','Eng. Elétrica','90276','EE','Eng. Elétrica','1248','Circuitos',1);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('95833448','9583','Eng. Elétrica','90276','EE','Eng. Elétrica','3448','Sistemas Digitais',2);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('98768940','9876','Administração','99154','AD','Administração','8940','Gestão',2);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('98761880','9876','Administração','99154','AD','Administração','1880','Macroeconomia',2);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('19144847','1914','Eng. Automotiva','24486','FI','Física','4847','Mecânica Geral',1);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('19141248','1914','Eng. Automotiva','24486','EE','Eng. Elétrica','1248','Circuitos',2);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('15219882','1521','Eng. Civil','20783','FI','Física','9882','Termodinâmica',1);
+
+INSERT INTO
+default_keyspace.Cursos(mmc,id_curso,nome_curso,coordenador,depart_id,depart_nome,id_disc,nome_disc,ciclo) VALUES
+('15211983','1521','Eng. Civil','20783','FI','Física','1983','Cálculo',2);
