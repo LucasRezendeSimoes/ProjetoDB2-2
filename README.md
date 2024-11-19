@@ -9,6 +9,6 @@ Projeto do semestre passado: https://github.com/LucasRezendeSimoes/ProjetoDB
 Como acessar o banco de dados:
 - Abra um console CQL
 - Copie o código do arquivo codigo.txt
-- Cole no terminal
+- Cole no terminal e execute
 
 As queries pedidas estão no arquivo queries.txt
