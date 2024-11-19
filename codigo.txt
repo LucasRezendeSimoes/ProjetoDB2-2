@@ -1,14 +1,11 @@
 /*
-
 CREATE KEYSPACE default_keyspace
   WITH REPLICATION = { 
    'class' : 'SimpleStrategy', 
    'replication_factor' : 1 
   };
-
-Execute o código acima caso nenhuma keyspace tenha sido criada anteriormente.
 */
-
+-- Execute o código acima caso nenhuma keyspace tenha sido criada anteriormente.
 
 /* Alunos */
 CREATE TABLE default_keyspace.Alunos(
