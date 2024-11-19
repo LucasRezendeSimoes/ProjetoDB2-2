@@ -1,0 +1,18 @@
+-- Histórico escolar com data, nota, códigos e nomes das disciplinas e dos alunos.
+SELECT nome, ra, nome_disc, id_disc, semestre, ano, nota FROM default_keyspace.Alunos;
+
+-- Histórico de disciplinas ministradas pelos professores com data
+SELECT nome, id, nome_disc, id_disc, data FROM default_keyspace.Professores;
+
+-- Lista todos os alunos já formados
+SELECT nome, ra, formado AS Formado_em FROM default_keyspace.Alunos
+WHERE formado > '0001-01-01' ALLOW FILTERING;
+
+-- Lista todos os chefes de departamento
+SELECT nome AS chefe, id, depart_nome AS departamento, depart_id FROM default_keyspace.Professores
+WHERE chefe = true ALLOW FILTERING;
+
+-- Lista todos os alunos com seus grupos de TCC e seus orientadores
+SELECT nome, ra, id_tcc AS grupo, nome_ori AS Orientador, id_ori AS ID_Orientador
+FROM default_keyspace.Alunos
+WHERE id_tcc != '' ALLOW FILTERING;
